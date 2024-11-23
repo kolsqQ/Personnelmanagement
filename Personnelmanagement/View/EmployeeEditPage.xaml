@@ -1,0 +1,22 @@
+﻿<Page x:Class="Personnelmanagement.View.EmployeeEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Personnelmanagement.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="430"
+      Title="EmployeeEditPage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Label Content="Имя"/>
+            <TextBox x:Name="Name" />
+            <Label Content="Должность"/>
+            <TextBox x:Name="Position"/>
+            <Label  Content="Телефон"/>
+            <TextBox x:Name="Phone" />
+            <Button x:Name="Save" Content="Cохранить" Margin="15" Click="Save_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
