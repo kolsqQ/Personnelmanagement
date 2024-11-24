@@ -25,18 +25,15 @@ namespace Personnelmanagement.View
         public EmployeeListPage()
         {
             InitializeComponent();
-            EmployeeGrid.ItemsSource = employees;
+            EmployeeGrid.ItemsSource = employee;
 
 
 
         }
 
-        public ObservableCollection<Employee> employees = new ObservableCollection<Employee>
+        public ObservableCollection<Employee> employee = new ObservableCollection<Employee>
         {
-                new Employee { id = 1 , Name="Боб", Position="Босс", Phone=7777 },
-                new Employee { id = 2 , Name="Илья", Position="Работяга", Phone=2321 },
-                new Employee { id = 3 , Name="Темон", Position="Работяга", Phone=6364 },
-
+                new Employee {  Name="Боб", Position="Босс" },
         };
 
 
@@ -48,14 +45,19 @@ namespace Personnelmanagement.View
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+
+        private void Edit(object sender, RoutedEventArgs e)
         {
             if (EmployeeGrid.SelectedItem != null)
             {
                 var selectedEmployee = (Employee)EmployeeGrid.SelectedItem;
-
-                EmployeeEditPage editPage = new EmployeeEditPage(selectedEmployee);
-                this.NavigationService.Navigate(editPage);
+                EmployeeEditPage editPage = new EmployeeEditPage(selectedEmployee , this);
+                NavigationService.Navigate(editPage);
+            }
+            else 
+            {
+                MessageBox.Show("выберите сотрудника");
             }
         }
     }

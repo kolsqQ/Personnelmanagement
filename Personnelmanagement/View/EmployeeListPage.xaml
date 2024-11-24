@@ -10,18 +10,16 @@
 
 
     <Grid>
-        <DataGrid CanUserResizeColumns="False" CanUserResizeRows="False"  SelectionUnit="FullRow" x:Name="EmployeeGrid" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" Margin="0,0,0,50" >
+        <DataGrid IsReadOnly="True"  CanUserResizeColumns="False" CanUserResizeRows="False"  SelectionUnit="FullRow" x:Name="EmployeeGrid" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" Margin="0,0,0,50" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding id}" Width="1" Header="id" />
-                <DataGridTextColumn Binding="{Binding Name}" Width="150" Header="Имя" />
-                <DataGridTextColumn Binding="{Binding Position}" Width="125" Header="Должность"/>
-                <DataGridTextColumn Binding="{Binding Phone}" Width="110" Header="Телефон"/>
+                <DataGridTextColumn Binding="{Binding Name}" Width="180" Header="Имя" />
+                <DataGridTextColumn Binding="{Binding Position}" Width="200" Header="Должность"/>
             </DataGrid.Columns>
 
         </DataGrid>
 
         <StackPanel VerticalAlignment="Bottom">
-            <Button Content="Редактировать" Height="50" Click="Button_Click"></Button>
+            <Button Content="Редактировать" Height="50" Click="Edit"></Button>
             
         </StackPanel>
     </Grid>

@@ -14,8 +14,6 @@
             <TextBox x:Name="Name" />
             <Label Content="Должность"/>
             <TextBox x:Name="Position"/>
-            <Label  Content="Телефон"/>
-            <TextBox x:Name="Phone" />
             <Button x:Name="Save" Content="Cохранить" Margin="15" Click="Save_Click"/>
         </StackPanel>
     </Grid>

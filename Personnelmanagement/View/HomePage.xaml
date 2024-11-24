@@ -9,6 +9,6 @@
       Title="HomePage">
 
     <Grid>
-        <Label Content="123"></Label>
+        <Label Content="йоу" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
     </Grid>
 </Page>

@@ -6,10 +6,14 @@
         xmlns:local="clr-namespace:Personnelmanagement"
         mc:Ignorable="d" Height="400" Width="600" ResizeMode="NoResize">
     <Grid>
-        <Frame Margin="170,0,0,0" Name="appframe" NavigationUIVisibility="Hidden" Navigated="appframe_Navigated" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition  Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Frame Name="appframe" NavigationUIVisibility="Hidden" Navigated="appframe_Navigated" Grid.Column="2"  />
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center"   >
             <Button Name="Main" Content="Главная страница" HorizontalAlignment="Left" Width="150" Margin="10" Height="50" Click="MainPage_Click"/>
-            <Button Name="EmployeeList" Content="Список сотрудников" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Margin="10" Height="50" Click="EmployeeList_Click"/>
+            <Button Name="EmployeeList" Content="Список сотрудников" HorizontalAlignment="Left" Width="150" Margin="10" Height="50" Click="EmployeeList_Click"/>
         </StackPanel>
     </Grid>
 </Window>

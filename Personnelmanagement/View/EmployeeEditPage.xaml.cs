@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Personnelmanagement.View
 {
@@ -21,25 +23,30 @@ namespace Personnelmanagement.View
     public partial class EmployeeEditPage : Page
     {
 
-        private Employee employees;
+        private Employee employee;
+        private EmployeeListPage EmployeeListPage;
 
-        public EmployeeEditPage(Employee employee)
+
+        public EmployeeEditPage(Employee emp, EmployeeListPage EmployeeList)
         {
             InitializeComponent();
-            employees = employee;
-            Name.Text = employees.Name;
-            Position.Text = employees.Position;
-            Phone.Text = Convert.ToString(employees.Phone);
+
+            employee = emp;
+            EmployeeListPage = EmployeeList;
+
+
+            Name.Text = employee.Name;
+            Position.Text = employee.Position;
         }
+
+
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            employees.Name = Name.Text;
-            employees.Position = Position.Text;
-            employees.Phone = int.Parse(Phone.Text);
-
-            this.NavigationService.GoBack();
-
+            employee.Name = Name.Text;
+            employee.Position = Position.Text;
+            EmployeeListPage.EmployeeGrid.Items.Refresh();
+            NavigationService.GoBack();
         }
     }
 }
